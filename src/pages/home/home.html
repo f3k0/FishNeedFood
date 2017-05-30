@@ -1,6 +1,6 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>
+    <ion-title text-center>
       Fish need food?
     </ion-title>
   </ion-navbar>
@@ -11,9 +11,15 @@
   <ion-label text-center>
     Press button to find out next feeding time 
   </ion-label>
-  
-  <button ion-button color="secondary" class="button icon-left ion-star button-block" (click)="doFeedingTime()">Next feeding time</button>
-  
-  <p text-center>Add image</p>
+
+  <div text-center>
+    <ion-img [width]="imgWidth" [height]="imgHeight" src="../assets/images/aquarium.jpg"></ion-img>
+  </div>
 
 </ion-content>
+
+<ion-footer>
+
+  <button ion-button color="secondary" class="button icon-left ion-star button-block" (click)="doFeedingTime()">Next feeding time</button>
+
+</ion-footer>
