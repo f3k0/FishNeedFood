@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { AlertController } from 'ionic-angular';
-
+import { ToastController } from 'ionic-angular';
 
 @Component({
   selector: 'page-home',
@@ -9,15 +9,19 @@ import { AlertController } from 'ionic-angular';
 
 export class HomePage {
 
-  constructor(public alerCtrl: AlertController) { }
+  constructor(public toastCtrl: ToastController) { }
 
-  doFeedingTime() {
-      let alert = this.alerCtrl.create({
-        title: 'Feeding time',
-        message: 'In ' + this.calculateFeedingTime() + '!',
-        buttons: ['Got it']
-      });
-      alert.present()
+  nextFeedingTime() {
+     
+      // Toast with close button
+    const toast = this.toastCtrl.create({
+      message: 'Next feeding time in ' + this.calculateFeedingTime() + '!',
+      showCloseButton: true,
+      position: 'top',
+      closeButtonText: 'OK'
+    });
+    toast.present();
+  
     }
   
   calculateFeedingTime() {
